@@ -1,0 +1,11 @@
+/Users/macrt/Documents/WEB/Lab2/OnetoOne-SpringHibernate/src/main/java/ac/cr/una/lab2/config/AppConfig.java
+/Users/macrt/Documents/WEB/Lab2/OnetoOne-SpringHibernate/src/main/java/ac/cr/una/lab2/dao/personDao.java
+/Users/macrt/Documents/WEB/Lab2/OnetoOne-SpringHibernate/src/main/java/ac/cr/una/lab2/service/PassportDetailServiceService.java
+/Users/macrt/Documents/WEB/Lab2/OnetoOne-SpringHibernate/src/main/java/ac/cr/una/lab2/service/PersonServiceImp.java
+/Users/macrt/Documents/WEB/Lab2/OnetoOne-SpringHibernate/src/main/java/ac/cr/una/lab2/model/Person.java
+/Users/macrt/Documents/WEB/Lab2/OnetoOne-SpringHibernate/src/main/java/ac/cr/una/lab2/model/PassportDetail.java
+/Users/macrt/Documents/WEB/Lab2/OnetoOne-SpringHibernate/src/main/java/ac/cr/una/lab2/service/PersonService.java
+/Users/macrt/Documents/WEB/Lab2/OnetoOne-SpringHibernate/src/main/java/ac/cr/una/lab2/dao/passportDetailDao.java
+/Users/macrt/Documents/WEB/Lab2/OnetoOne-SpringHibernate/src/main/java/ac/cr/una/lab2/service/PassportDetailServiceImp.java
+/Users/macrt/Documents/WEB/Lab2/OnetoOne-SpringHibernate/src/main/java/ac/cr/una/lab2/dao/passportDetailDaoImp.java
+/Users/macrt/Documents/WEB/Lab2/OnetoOne-SpringHibernate/src/main/java/ac/cr/una/lab2/dao/personDaoImp.java

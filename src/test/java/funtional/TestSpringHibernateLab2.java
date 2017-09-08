@@ -9,6 +9,7 @@ import ac.cr.una.lab2.model.PassportDetail;
 import ac.cr.una.lab2.model.Person;
 import ac.cr.una.lab2.service.PersonService;
 import ac.cr.una.lab2.config.AppConfig;
+import ac.cr.una.lab2.service.PassportDetailServiceService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -30,6 +31,7 @@ import static org.junit.Assert.assertNotNull;
 public class TestSpringHibernateLab2 {
     private static AnnotationConfigApplicationContext context = null;
     private static PersonService personService = null;
+    private static PassportDetailServiceService passportService = null;
 
     public TestSpringHibernateLab2() {
 
@@ -40,6 +42,7 @@ public class TestSpringHibernateLab2 {
 
         context = new AnnotationConfigApplicationContext(AppConfig.class);
         personService = context.getBean(PersonService.class);
+         passportService = context.getBean(PassportDetailServiceService.class);
     }
 
     @After
@@ -50,11 +53,15 @@ public class TestSpringHibernateLab2 {
     @Test
     public void test1() throws Exception {
 
+        PassportDetail passport = new PassportDetail("402180615");
+        passportService.add(passport);
+        
+        
         // Add Users
-        personService.add(new Person("Juan Jara",new PassportDetail("402180615")));
-        personService.add(new Person("Ana Beatriz Herrera",new PassportDetail("204210090")));
-        personService.add(new Person("Daniela Jara",new PassportDetail("403450568")));
-        personService.add(new Person("Luis Jara",new PassportDetail("400910678")));
+        personService.add(new Person("Juan Jara",passport));
+       // personService.add(new Person("Ana Beatriz Herrera",passport));
+        //personService.add(new Person("Daniela Jara",new PassportDetail("403450568")));
+        //personService.add(new Person("Luis Jara",new PassportDetail("400910678")));
 
        
         

@@ -9,12 +9,14 @@ import ac.cr.una.lab2.dao.passportDetailDao;
 import ac.cr.una.lab2.model.PassportDetail;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author MACJuanJara
  */
+@Service
 public class PassportDetailServiceImp implements PassportDetailServiceService{
 
     @Autowired

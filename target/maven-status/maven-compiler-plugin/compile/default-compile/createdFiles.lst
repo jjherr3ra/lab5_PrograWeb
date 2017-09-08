@@ -1,0 +1,11 @@
+ac/cr/una/lab2/config/AppConfig.class
+ac/cr/una/lab2/dao/personDaoImp.class
+ac/cr/una/lab2/model/PassportDetail.class
+ac/cr/una/lab2/dao/passportDetailDaoImp.class
+ac/cr/una/lab2/model/Person.class
+ac/cr/una/lab2/dao/passportDetailDao.class
+ac/cr/una/lab2/dao/personDao.class
+ac/cr/una/lab2/service/PassportDetailServiceImp.class
+ac/cr/una/lab2/service/PersonServiceImp.class
+ac/cr/una/lab2/service/PassportDetailServiceService.class
+ac/cr/una/lab2/service/PersonService.class

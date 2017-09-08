@@ -10,11 +10,14 @@ import java.util.List;
 import javax.persistence.TypedQuery;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author MACJuanJara
  */
+@Repository
 public class personDaoImp implements personDao{
 
     @Autowired

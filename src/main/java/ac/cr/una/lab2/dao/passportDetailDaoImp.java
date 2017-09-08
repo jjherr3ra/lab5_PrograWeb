@@ -10,11 +10,13 @@ import java.util.List;
 import javax.persistence.TypedQuery;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author MACJuanJara
  */
+@Repository
 public class passportDetailDaoImp implements passportDetailDao{
 
     @Autowired
