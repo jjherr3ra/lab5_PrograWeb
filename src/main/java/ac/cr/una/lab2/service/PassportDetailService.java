@@ -15,4 +15,7 @@ import java.util.List;
 public interface PassportDetailService {
      void add(PassportDetail passport);
      List<PassportDetail> listPassports();
+     PassportDetail getById (Long idPassport);
+     PassportDetail update (Long idPassport, PassportDetail passport);
+     boolean deleteById (Long idPassport);
 }

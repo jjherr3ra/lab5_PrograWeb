@@ -15,4 +15,7 @@ import java.util.List;
 public interface passportDetailDao {
     void add(PassportDetail passport);
     List<PassportDetail> listPassports();
+    PassportDetail update (Long idPassport, PassportDetail passport);
+    PassportDetail getById (Long idPassport);
+    boolean deleteById (Long idPassport);
 }

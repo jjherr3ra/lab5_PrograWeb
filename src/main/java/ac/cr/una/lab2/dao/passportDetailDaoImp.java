@@ -34,5 +34,38 @@ public class passportDetailDaoImp implements passportDetailDao{
         TypedQuery<PassportDetail> query=sessionFactory.getCurrentSession().createQuery("from PassportDetail");
         return query.getResultList();
     }
-    
+
+    @Override
+    public PassportDetail update(Long idPassport, PassportDetail passport) {
+        PassportDetail passportUpdated = getById(idPassport);
+
+        if (passportUpdated != null) {
+            sessionFactory.getCurrentSession().merge(passport);
+        } else {
+            passport = null;
+        }
+
+        return passport;
+    }
+
+
+    @Override
+    public  PassportDetail getById(Long idPassport) {
+        PassportDetail passport = (PassportDetail) sessionFactory.getCurrentSession().get(PassportDetail.class, idPassport);
+        return passport;
+    }
+
+    @Override
+    public boolean deleteById(Long idPassport) {
+        boolean isDeleted = false;
+        PassportDetail passport = getById(idPassport);
+
+        if (passport != null) {
+            sessionFactory.getCurrentSession().delete(passport);
+            isDeleted = true;
+        }
+
+        return isDeleted;
+    }
+
 }

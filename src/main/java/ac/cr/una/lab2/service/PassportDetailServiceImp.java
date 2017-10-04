@@ -33,5 +33,22 @@ public class PassportDetailServiceImp implements PassportDetailService {
     public List<PassportDetail> listPassports() {
        return passportDetailDao.listPassports();
     }
-    
+
+    @Override
+    public PassportDetail getById(Long idPassport) {
+        return passportDetailDao.getById(idPassport);
+    }
+
+    @Override
+    public PassportDetail update(Long idPassport, PassportDetail passport) {
+        PassportDetail passportPersisted = passportDetailDao.update(idPassport, passport);
+
+        return passportPersisted;
+    }
+
+    @Override
+    public boolean deleteById(Long idPassport) {
+        return passportDetailDao.deleteById(idPassport);
+    }
+
 }
