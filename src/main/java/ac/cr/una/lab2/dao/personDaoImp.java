@@ -34,5 +34,38 @@ public class personDaoImp implements personDao{
         TypedQuery<Person> query=sessionFactory.getCurrentSession().createQuery("from Person");
         return query.getResultList();
     }
-    
+
+    @Override
+    public Person update(Long idPerson, Person person) {
+        Person personUpdated = getPersonById(idPerson);
+
+        if (personUpdated != null) {
+            sessionFactory.getCurrentSession().merge(person);
+        } else {
+            person = null;
+        }
+
+        return person;
+    }
+
+
+    @Override
+    public Person getPersonById(Long idPerson) {
+        Person person = (Person) sessionFactory.getCurrentSession().get(Person.class, idPerson);
+        return person;
+    }
+
+    @Override
+    public boolean deleteById(Long idPerson) {
+        boolean isDeleted = false;
+        Person person = getPersonById(idPerson);
+
+        if (person != null) {
+            sessionFactory.getCurrentSession().delete(person);
+            isDeleted = true;
+        }
+
+        return isDeleted;
+    }
+
 }

@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author MACJuanJara
  */
 @Service
-public class PassportDetailServiceImp implements PassportDetailServiceService{
+public class PassportDetailServiceImp implements PassportDetailService {
 
     @Autowired
     private passportDetailDao passportDetailDao;

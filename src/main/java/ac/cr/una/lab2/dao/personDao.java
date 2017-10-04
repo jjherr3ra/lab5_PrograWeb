@@ -15,5 +15,8 @@ import java.util.List;
 public interface personDao {
     void add(Person person);
     List<Person> listPeople();
+    Person update (Long idPerson, Person person);
+    Person getPersonById (Long idPerson);
+    boolean deleteById (Long idPerson);
     
 }

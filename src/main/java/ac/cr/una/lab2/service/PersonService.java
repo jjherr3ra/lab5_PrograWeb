@@ -15,4 +15,7 @@ import java.util.List;
 public interface PersonService {
     void add(Person person);
     List<Person> listPeople();
+    Person getPersonById (Long idPerson);
+    Person update (Long idPerson, Person person);
+    boolean deleteById (Long idPerson);
 }

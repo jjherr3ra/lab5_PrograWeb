@@ -8,8 +8,8 @@ package funtional;
 import ac.cr.una.lab2.model.PassportDetail;
 import ac.cr.una.lab2.model.Person;
 import ac.cr.una.lab2.service.PersonService;
-import ac.cr.una.lab2.config.AppConfig;
-import ac.cr.una.lab2.service.PassportDetailServiceService;
+import ac.cr.una.lab2.config.AppRootConfig;
+import ac.cr.una.lab2.service.PassportDetailService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -31,7 +31,7 @@ import static org.junit.Assert.assertNotNull;
 public class TestSpringHibernateLab2 {
     private static AnnotationConfigApplicationContext context = null;
     private static PersonService personService = null;
-    private static PassportDetailServiceService passportService = null;
+    private static PassportDetailService passportService = null;
 
     public TestSpringHibernateLab2() {
 
@@ -40,9 +40,9 @@ public class TestSpringHibernateLab2 {
     @Before
     public void setUp() throws Exception {
 
-        context = new AnnotationConfigApplicationContext(AppConfig.class);
+        context = new AnnotationConfigApplicationContext(AppRootConfig.class);
         personService = context.getBean(PersonService.class);
-         passportService = context.getBean(PassportDetailServiceService.class);
+         passportService = context.getBean(PassportDetailService.class);
     }
 
     @After

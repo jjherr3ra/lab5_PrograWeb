@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: funtional.TestSpringHibernateLab2
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.156 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.434 sec

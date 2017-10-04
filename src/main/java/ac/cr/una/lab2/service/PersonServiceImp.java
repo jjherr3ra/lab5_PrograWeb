@@ -33,5 +33,24 @@ public class PersonServiceImp implements PersonService{
     public List<Person> listPeople() {
         return personDao.listPeople();
     }
-    
+
+    @Override
+    public Person getPersonById(Long idPerson) {
+        return personDao.getPersonById(idPerson);
+    }
+
+    @Transactional
+    @Override
+    public boolean deleteById (Long idPerson) {
+        return personDao.deleteById(idPerson);
+    }
+
+    @Transactional
+    @Override
+    public Person update(Long idPerson, Person person) {
+        Person personPersisted = personDao.update(idPerson, person);
+
+        return personPersisted;
+    }
+
 }
