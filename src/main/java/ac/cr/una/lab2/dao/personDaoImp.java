@@ -68,4 +68,10 @@ public class personDaoImp implements personDao{
         return isDeleted;
     }
 
+    @Override
+    public Person getPersonbyName(String name) {
+        Person person = (Person) sessionFactory.getCurrentSession().get(Person.class, name);
+        return person;
+    }
+
 }

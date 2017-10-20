@@ -18,5 +18,6 @@ public interface personDao {
     Person update (Long idPerson, Person person);
     Person getPersonById (Long idPerson);
     boolean deleteById (Long idPerson);
+    Person getPersonbyName(String name);
     
 }
