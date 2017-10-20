@@ -1,8 +1,10 @@
 package ac.cr.una.lab2.config;
 
+import ac.cr.una.lab2.dao.RoleDao;
 import ac.cr.una.lab2.dao.personDao;
 import ac.cr.una.lab2.dao.passportDetailDao;
 import ac.cr.una.lab2.model.Person;
+import ac.cr.una.lab2.dao.roleDao;
 import ac.cr.una.lab2.model.PassportDetail;
 import ac.cr.una.lab2.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
     private personDao personDao;
 
     @Autowired
-    private passportDetailDao passportDao;
+    private RoleDao roleDao;
 
     @Transactional
     @Override
@@ -32,9 +34,21 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
 
         if ((!alreadySetup) && (personAdmin == null)) {
 
-            Set<Role> rolesAdmin =  new HashSet<Role>();
+            Set<Role> adminRole =  new HashSet<Role>();
             createRoleIfNotFound("ROLE_ADMIN");
             createRoleIfNotFound("ROLE_USER");
+
+            final Role personRole = roleDao.findByAuthority("ROLE_ADMIN");
+            adminRole.add(personRole);
+            final Person person = new Person();
+            person.setName("Juan");
+            person.setPassportno(new PassportDetail("402180615"));
+
+            personDao.add(person);
+
+            final Role userRole = roleDao.findByAuthority("ROLE_USER");
+            Set<Role> rolesUser =  new HashSet<Role>();
+            rolesUser.add(userRole);
 
         }
 
