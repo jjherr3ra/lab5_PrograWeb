@@ -2,20 +2,22 @@ package ac.cr.una.lab2.config;
 
 import ac.cr.una.lab2.dao.RoleDao;
 import ac.cr.una.lab2.dao.personDao;
-import ac.cr.una.lab2.dao.passportDetailDao;
 import ac.cr.una.lab2.model.Person;
-import ac.cr.una.lab2.dao.roleDao;
+
 import ac.cr.una.lab2.model.PassportDetail;
 import ac.cr.una.lab2.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
+
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import java.util.HashSet;
 import java.util.Set;
 
+@Component
 public class SetupDataLoader implements ApplicationListener<ContextRefreshedEvent>{
 
     private boolean alreadySetup = false;
@@ -52,6 +54,16 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
 
         }
 
+    }
+
+
+    private Role createRoleIfNotFound(final String authority) {
+        Role role = roleDao.findByAuthority(authority);
+        if (role == null) {
+            role = new Role(authority);
+            roleDao.add(role);
+        }
+        return role;
     }
 
 }

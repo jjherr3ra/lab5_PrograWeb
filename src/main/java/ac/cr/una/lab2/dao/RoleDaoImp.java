@@ -1,7 +1,6 @@
 package ac.cr.una.lab2.dao;
-import ac.cr.una.lab2.model.Role;
-import ac.cr.una.lab2.model.Person;
 
+import ac.cr.una.lab2.model.Role;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

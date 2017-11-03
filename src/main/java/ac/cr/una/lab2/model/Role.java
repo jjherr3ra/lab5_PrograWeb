@@ -2,6 +2,7 @@ package ac.cr.una.lab2.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -15,7 +16,7 @@ public class Role {
     private String authority;
     @JsonIgnore
     @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
-    private Set<Person> persons;
+    private Set<User> users;
 
     public Role() {
     }
@@ -24,9 +25,9 @@ public class Role {
         this.authority = authority;
     }
 
-    public Role(String authority, Set<Person> persons) {
+    public Role(String authority, Set<User> users) {
         this.authority = authority;
-        this.persons = persons;
+        this.users = users;
     }
 
     public Long getId() {
@@ -45,12 +46,12 @@ public class Role {
         this.authority = authority;
     }
 
-    public Set<Person> getPersons() {
-        return persons;
+    public Set<User> getUsers() {
+        return users;
     }
 
-    public void setUsers(Set<Person> persons) {
-        this.persons = persons;
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 
 }

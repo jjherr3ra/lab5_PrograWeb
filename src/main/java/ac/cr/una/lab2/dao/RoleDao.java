@@ -1,5 +1,7 @@
 package ac.cr.una.lab2.dao;
 
+
+
 import ac.cr.una.lab2.model.Role;
 
 import java.util.List;
